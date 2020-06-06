@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国服黑名单</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i2.hdslb.com/bfs/face/4e8cba44ae5919aa72f99321edf5c0b0761eb270.jpg_64x64.jpg" />
+</head>
+<body>
+    <div id="main-holder">
+        <div id="intro">
+            <p>
+                这里是用于展示国服公主连结中，有过重大违规行为账号的页面。
+            </p>
+            <p>
+                违规行为仅包括 <span>毁号</span> 以及 <span>恶意毁刀</span> 
+            </p>
+            <p>
+               想举报账号？<a href="https://www.baidu.com" target="_blank">我要曝光</a>
+            </p>
+            <p>
+                有疑问？<a href="#about">策略介绍</a>
+            </p>
+        </div>
+        <div id="input-holder">
+            <input type="number" id="input" placeholder="在此搜索ID">
+            <button onclick="search()">搜索ID</button>
+        </div>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>公主连结ID</th>
+                        <th>原因</th>
+                        <th>证据地址</th>
+                    </tr>
+                </thead>
+                <tbody id="main-table">
+                </tbody>
+            </table>
+        </div>
+        <p id="about">
+            本网站只展示有毁号/恶意毁刀行为的账号，低伤害刀暂不受理。想提交举报或对此页内容有异议的，请点击最上方的“我要曝光”。</br >
+            更新周期为一天一次。
+        </p>
+    </div>
+    <script type="text/javascript">
+        const d = [
+            {
+                id: '1 111 111 111 111',
+                reason: '毁号',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '毁号',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '毁号',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 111',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+            {
+                id: '1 111 111 111 112',
+                reason: '恶意毁刀',
+                prove: 'https://www.baidu.com'
+            },
+        ];
+        function toNode(parentNode, tagName, innerHTML) {
+            const ele = document.createElement(tagName);
+            ele.innerHTML = innerHTML;
+            parentNode.appendChild(ele);
+        };
+        const table = document.querySelector("#main-table");
+        d.forEach((item, index) => {
+            const innerHTML = `
+                <td id=no${index}>${item.id}</td>
+                <td>${item.reason}</td>
+                <td><a href=${item.prove} target='_blank'>NGA</td>
+            `
+            toNode(table, "tr", innerHTML);
+        })
+        function search() {
+            input.value = input.value.replace(/\s/g, '')
+            const temp = d.map(item => item.id.replace(/\s/g, ''));
+            const index = temp.indexOf(input.value);
+            if (index <= -1) {
+                alert("无结果");
+                return;
+            }
+            const id = `#no${index}`;
+            location.href = id;
+            const node = document.querySelector(id);
+            node.classList.add("target-tr");
+        }
+    </script>
+</body>
+</html>
