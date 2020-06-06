@@ -60,6 +60,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: #909399;
     text-align: center;
 }
+#about > span {
+    color: #409EFF;
+}
 
 @media 
 only screen and (max-width: 760px),
