@@ -111,4 +111,5 @@ only screen and (max-width: 760px),
 	td:nth-of-type(2):before { content: "原因"; }
 	td:nth-of-type(3):before { content: "证据地址"; }
 	td:nth-of-type(4):before { content: "谷歌快照"; }
+	td:nth-of-type(5):before { content: "标题"; }
 }
