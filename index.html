@@ -43,6 +43,7 @@
                         <th>公主连结ID</th>
                         <th>原因</th>
                         <th>证据地址</th>
+                        <th>证据快照</th>
                     </tr>
                 </thead>
                 <tbody id="main-table">
@@ -62,17 +63,20 @@
             {
                 id: '1 142 303 480 356',
                 reason: '毁号',
-                prove: 'https://bbs.nga.cn/read.php?tid=22059651'
+                prove: 'https://bbs.nga.cn/read.php?tid=22059651',
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:epc1PhQ97zsJ:https://bbs.nga.cn/read.php%3Ftid%3D22059651+&cd=1&hl=en&ct=clnk&gl=tw"
             },
             {
                 id: '1 335 716 013 195',
                 reason: '毁号',
-                prove: 'https://bbs.nga.cn/read.php?tid=21995316'
+                prove: 'https://bbs.nga.cn/read.php?tid=21995316',
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:YDxI_MflitMJ:https://bbs.nga.cn/read.php%3Ftid%3D21995316+&cd=1&hl=en&ct=clnk&gl=tw"
             },
             {
                 id: '1 374 619 230 788',
                 reason: '破坏合刀',
-                prove: 'https://bbs.nga.cn/read.php?tid=22068148'
+                prove: 'https://bbs.nga.cn/read.php?tid=22068148',
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:KB6MPXT_mFUJ:https://bbs.nga.cn/read.php%3Ftid%3D22068148+&cd=1&hl=en&ct=clnk&gl=tw"
             },
         ];
         function toNode(parentNode, tagName, innerHTML) {
@@ -86,6 +90,7 @@
                 <td id=no${index}>${item.id}</td>
                 <td>${item.reason}</td>
                 <td><a href=${item.prove} target='_blank'>NGA</td>
+                <td><a href=${item.screenshot} target='_blank'>谷歌链接</td>
             `
             toNode(table, "tr", innerHTML);
         })
