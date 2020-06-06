@@ -20,13 +20,16 @@
     <div id="main-holder">
         <div id="intro">
             <p>
-                这里是用于展示国服公主连结中，被指责有过违规行为账号的页面。
+                这里是用于展示国服公主连结中，<span>被指责</span>有过违规行为账号的页面。
             </p>
             <p>
                 违规行为仅包括 <span>毁号</span> 以及 <span>恶意毁刀</span> 
             </p>
             <p>
                想举报账号？<a href="https://bbs.nga.cn/read.php?tid=22065469&_ff=-10308342" target="_blank">我要曝光</a>
+            </p>
+            <p>
+                证据链接失效？请使用百度搜索标题，然后在搜索结果中查看快照。
             </p>
             <p>
                 有疑问？<a href="#about">策略介绍</a>
@@ -44,6 +47,7 @@
                         <th>原因</th>
                         <th>证据地址</th>
                         <th>证据快照</th>
+                        <th>标题</th>
                     </tr>
                 </thead>
                 <tbody id="main-table">
@@ -51,9 +55,9 @@
             </table>
         </div>
         <p id="about">
-            本网站只展示有毁号/恶意毁刀行为的账号，低伤害刀暂不受理。</br>
-            想提交举报或对此页内容有异议的，请点击最上方的“我要曝光”。</br>
-            此网站非公主连结Re:Dive官方项目，黑名单仅供参考。</br>
+            本网站只展示有毁号/恶意毁刀行为的账号，低伤害刀不受理。</br>
+            想提交举报或对此页内容有疑问的，请点击最上方的“我要曝光”。</br>
+            此网站非公主连结Re:Dive官方项目，黑名单仅供参考，请自行判断孰是孰非。</br>
             更新周期为一天一次。</br>
             last update: <span>2020 6月6日 22:00</span>
         </p>
@@ -64,19 +68,22 @@
                 id: '1 142 303 480 356',
                 reason: '毁号',
                 prove: 'https://bbs.nga.cn/read.php?tid=22059651',
-                screenshot: "https://webcache.googleusercontent.com/search?q=cache:epc1PhQ97zsJ:https://bbs.nga.cn/read.php%3Ftid%3D22059651+&cd=1&hl=en&ct=clnk&gl=tw"
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:epc1PhQ97zsJ:https://bbs.nga.cn/read.php%3Ftid%3D22059651+&cd=1&hl=en&ct=clnk&gl=tw",
+                title: "[风纪区] 挂一个无良会长(磁电)所属公会十伽樱(120名)：求助：代刀时账号遭到恶意毁坏怎么办"
             },
             {
                 id: '1 335 716 013 195',
                 reason: '毁号',
                 prove: 'https://bbs.nga.cn/read.php?tid=21995316',
-                screenshot: "https://webcache.googleusercontent.com/search?q=cache:YDxI_MflitMJ:https://bbs.nga.cn/read.php%3Ftid%3D21995316+&cd=1&hl=en&ct=clnk&gl=tw"
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:YDxI_MflitMJ:https://bbs.nga.cn/read.php%3Ftid%3D21995316+&cd=1&hl=en&ct=clnk&gl=tw",
+                title: "[风纪区] 骗人，毁号，29保1——第一次公会战排名445的公会紫罗兰永恒花园的会长"
             },
             {
                 id: '1 374 619 230 788',
                 reason: '破坏合刀',
                 prove: 'https://bbs.nga.cn/read.php?tid=22068148',
-                screenshot: "https://webcache.googleusercontent.com/search?q=cache:KB6MPXT_mFUJ:https://bbs.nga.cn/read.php%3Ftid%3D22068148+&cd=1&hl=en&ct=clnk&gl=tw"
+                screenshot: "https://webcache.googleusercontent.com/search?q=cache:KB6MPXT_mFUJ:https://bbs.nga.cn/read.php%3Ftid%3D22068148+&cd=1&hl=en&ct=clnk&gl=tw",
+                title: "[风纪区] 挂一个破坏合刀，口里说的好，背后却使坏的人。。。。"
             },
         ];
         function toNode(parentNode, tagName, innerHTML) {
@@ -91,6 +98,7 @@
                 <td>${item.reason}</td>
                 <td><a href=${item.prove} target='_blank'>NGA</td>
                 <td><a href=${item.screenshot} target='_blank'>谷歌链接</td>
+                <td class="title">${item.title}</td>
             `
             toNode(table, "tr", innerHTML);
         })

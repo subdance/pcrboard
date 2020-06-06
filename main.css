@@ -27,6 +27,9 @@ td:first-of-type {
 td > a {
     color: #67C23A;
 }
+td:last-of-type {
+    font-size: 8px;
+}
 #intro > p {
     font-size: 12px;
     text-align: center;
@@ -107,5 +110,5 @@ only screen and (max-width: 760px),
 	td:nth-of-type(1):before { content: "公主连结ID"; }
 	td:nth-of-type(2):before { content: "原因"; }
 	td:nth-of-type(3):before { content: "证据地址"; }
-	td:nth-of-type(4):before { content: "证据快照"; }
+	td:nth-of-type(4):before { content: "谷歌快照"; }
 }
