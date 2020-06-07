@@ -20,7 +20,7 @@
     <div id="main-holder">
         <div id="intro">
             <p>
-                这里是用于展示国服公主连结中，<span>被指责</span>有过违规行为账号的页面。
+                这里是用于展示国服公主连结中，<b>被指责</b>有过违规行为账号的页面。
             </p>
             <p>
                 违规行为仅包括 <span>毁号</span> 以及 <span>恶意毁刀</span> 
@@ -36,10 +36,13 @@
             </p>
         </div>
         <div id="input-holder">
-            <input type="number" id="input" placeholder="在此输入数字ID">
-            <button onclick="search()">搜索ID</button>
+            <div class="input-box">
+                <input type="number" id="input" placeholder="输入数字ID">
+                <span></span>
+            </div>
+            <button onclick="search()" class="bubble">搜索ID</button>
         </div>
-        <div style="overflow-x: auto; max-width: 100vw;">
+        <div class="table-holder">
             <table>
                 <thead>
                     <tr>
@@ -64,6 +67,7 @@
         </p>
     </div>
     <script type="text/javascript">
+        const table = document.querySelector("#main-table");
         const d = [
             {
                 id: '1 142 303 480 356',
@@ -87,42 +91,45 @@
                 title: "[风纪区] 挂一个破坏合刀，口里说的好，背后却使坏的人。。。。"
             },
         ];
-        function toNode(parentNode, tagName, innerHTML) {
+        function appendToNode(parentNode, tagName, innerHTML) {
             const ele = document.createElement(tagName);
             ele.innerHTML = innerHTML;
             parentNode.appendChild(ele);
         };
-        const table = document.querySelector("#main-table");
-        d.forEach((item, index) => {
-            const innerHTML = `
-                <td id=no${index}>${item.id}</td>
-                <td>${item.reason}</td>
-                <td><a href=${item.prove} target='_blank'>NGA</td>
-                <td><a href=${item.screenshot} target='_blank'>谷歌链接</td>
-                <td class="title">${item.title}</td>
-            `
-            toNode(table, "tr", innerHTML);
-        })
         function search() {
-            input.value = input.value.replace(/\s/g, '')
-            const temp = d.map(item => item.id.replace(/\s/g, ''));
+            input.value = input.value.trimAll();
+            const temp = d.map(item => item.id.trimAll());
             const index = temp.indexOf(input.value);
             if (index <= -1) {
                 alert("无结果");
                 return;
             }
-            const id = `#no${index}`;
+            const id = `#id-${temp[index]}`;
+            console.log(id);
             location.href = id;
             const node = document.querySelector(id);
             node.classList.add("target-tr");
         }
-        getDiff();
-        setInterval(getDiff, 1000);
         function getDiff() {
             const diff = new Date() - new Date(2020, 5, 6, 14, 44);
             const node = document.querySelector("#launched-time");
             node.innerHTML = Number.parseInt( diff / 60 / 60 / 1000) + '小时';
         }
+        String.prototype.trimAll = function () {
+            return this.replace(/\s/g, '')
+        }
+        d.forEach((item, index) => {
+            const innerHTML = `
+                <td id=id-${item.id.trimAll()}>${item.id}</td>
+                <td>${item.reason}</td>
+                <td><a href=${item.prove} target='_blank'>NGA</td>
+                <td><a href=${item.screenshot} target='_blank'>谷歌链接</td>
+                <td class="title">${item.title}</td>
+            `
+            appendToNode(table, "tr", innerHTML);
+        })
+        getDiff();
+        setInterval(getDiff, 10000);
     </script>
 </body>
 </html>
