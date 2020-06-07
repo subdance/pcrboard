@@ -93,6 +93,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .input-box > input:focus {
     outline: none;
+    border-bottom-color: transparent;
 }
 .input-box > span {
     position: absolute;
