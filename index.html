@@ -37,7 +37,7 @@
         </div>
         <div id="input-holder">
             <div class="input-box">
-                <input type="number" id="input" placeholder="输入数字ID" onfocus="clearPrevios()">
+                <input type="number" id="input" placeholder="输入数字ID" onfocus="clearPrevios()" onchange="setForm()">
                 <span></span>
             </div>
             <button onclick="search()" class="bubble">搜索ID</button>
@@ -134,6 +134,9 @@
                 item.classList.remove("target-tr");
             })
         }
+        function setForm() {
+            input.value = input.value.trimAll();
+        }
         String.prototype.trimAll = function () {
             return this.replace(/\s/g, '')
         }
@@ -149,7 +152,6 @@
         })
         getDiff();
         setInterval(getDiff, 10000);
-
     </script>
 </body>
 </html>
