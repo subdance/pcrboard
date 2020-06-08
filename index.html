@@ -37,7 +37,7 @@
         </div>
         <div id="input-holder">
             <div class="input-box">
-                <input type="number" id="input" placeholder="输入数字ID" onfocus="clearPrevios()" onchange="setForm()">
+                <input type="number" id="input" placeholder="输入数字ID" onfocus="clearPrevios()">
                 <span></span>
             </div>
             <button onclick="search()" class="bubble">搜索ID</button>
@@ -111,9 +111,9 @@
             parentNode.appendChild(ele);
         };
         function search() {
-            input.value = input.value.trimAll();
+            const value = input.value.trimAll();
             const temp = d.map(item => item.id.trimAll());
-            const index = temp.indexOf(input.value.trimAll());
+            const index = temp.indexOf(value);
             if (index <= -1) {
                 alert("无结果");
                 return;
