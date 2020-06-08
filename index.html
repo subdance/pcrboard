@@ -37,7 +37,7 @@
         </div>
         <div id="input-holder">
             <div class="input-box">
-                <input type="number" id="input" placeholder="输入数字ID">
+                <input type="number" id="input" placeholder="输入数字ID" onfocus="clearPrevios()">
                 <span></span>
             </div>
             <button onclick="search()" class="bubble">搜索ID</button>
@@ -119,7 +119,6 @@
                 return;
             }
             const id = `#id-${temp[index]}`;
-            console.log(id);
             location.href = id;
             const node = document.querySelector(id);
             node.classList.add("target-tr");
@@ -129,21 +128,28 @@
             const node = document.querySelector("#launched-time");
             node.innerHTML = Number.parseInt( diff / 60 / 60 / 1000) + '小时';
         }
+        function clearPrevios() {
+            const node = document.querySelectorAll(".ids");
+            node.forEach(item => {
+                item.classList.remove("target-tr");
+            })
+        }
         String.prototype.trimAll = function () {
             return this.replace(/\s/g, '')
         }
         d.forEach((item, index) => {
             const innerHTML = `
-                <td id=id-${item.id.trimAll()}>${item.id}</td>
+                <td class='ids' id=id-${item.id.trimAll()}>${item.id}</td>
                 <td>${item.reason}</td>
-                <td><a href=${item.prove} target='_blank'>NGA</td>
-                <td><a href=${item.screenshot} target='_blank'>谷歌链接</td>
+                <td><a class='link-td' href=${item.prove} target='_blank'>NGA</td>
+                <td><a class='link-td' href=${item.screenshot} target='_blank'>谷歌链接</td>
                 <td class="title">${item.title}</td>
             `
             appendToNode(table, "tr", innerHTML);
         })
         getDiff();
         setInterval(getDiff, 10000);
+
     </script>
 </body>
 </html>
