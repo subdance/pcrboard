@@ -41,7 +41,7 @@ th {
     color: white;
 } */
 .link-td {
-    background: -webkit-linear-gradient(#ff8a00,#e52e71);
+    background: -webkit-linear-gradient(45deg, #ff8a00,#e52e71);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration-color: #ff8a00!important;
