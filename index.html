@@ -113,7 +113,7 @@
         function search() {
             input.value = input.value.trimAll();
             const temp = d.map(item => item.id.trimAll());
-            const index = temp.indexOf(input.value);
+            const index = temp.indexOf(input.value.trimAll());
             if (index <= -1) {
                 alert("无结果");
                 return;
