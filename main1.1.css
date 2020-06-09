@@ -37,9 +37,6 @@ th {
     top: 0px;
     color: white;
 }
-/* .link-td > a {
-    color: white;
-} */
 .link-td {
     background: -webkit-linear-gradient(45deg, #ff8a00,#e52e71);
     -webkit-background-clip: text;
@@ -56,10 +53,15 @@ th {
     color: #909399;
 }
 #intro > p > span {
-    color: #F56C6C;
+    /* color: #F56C6C; */
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: #3cefff;
+    /* font-weight: bold; */
+    font-size: 16px;
 }
 #intro > p > a {
     color: #fc2f70;
+    font-style: italic;
 }
 .target-tr {
     background-color: #ff8a00;
@@ -205,7 +207,7 @@ only screen and (max-width: 760px),
 	Label the data
 	*/
 	td:nth-of-type(1):before { content: "公主连结ID"; }
-	td:nth-of-type(2):before { content: "原因"; }
+	td:nth-of-type(2):before { content: "原因";}
 	td:nth-of-type(3):before { content: "证据地址"; }
 	td:nth-of-type(4):before { content: "谷歌快照"; }
 	td:nth-of-type(5):before { content: "标题"; }
