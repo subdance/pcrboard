@@ -184,6 +184,17 @@
                 item.classList.remove("target-tr");
             })
         }
+        function checkUrl() {
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+            console.log(params);
+            if (Object.keys(params).length) {
+                const id = `#id-${params.get("id")}`;
+                location.href = id;
+                const node = document.querySelector(id);
+                node.classList.add("target-tr");
+            }
+        }
         document.addEventListener("keyup", e => {
             if (e.keyCode == 13) {
                 search();
@@ -204,6 +215,7 @@
         })
         getDiff();
         setInterval(getDiff, 10000);
+        window.onload = checkUrl();
     </script>
 </body>
 </html>
