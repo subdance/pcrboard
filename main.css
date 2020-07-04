@@ -19,6 +19,7 @@ table::after, table::before {
     line-height: 180px;
     text-align: center;
     text-shadow: 1px 1px 1px black;
+    z-index: 999;
 }
 table::before {
     content: "给我布丁!";
@@ -52,6 +53,8 @@ th {
     position: sticky;
     top: 0px;
     color: white;
+    background-color: #100e17;
+    z-index: 0;
 }
 .link-td {
     background: -webkit-linear-gradient(45deg, #ff8a00,#e52e71);
