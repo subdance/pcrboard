@@ -50,11 +50,11 @@ th, td {
     color: #c2c2c2;
 }
 th {
-    position: sticky;
+    /* position: sticky; */
     top: 0px;
     color: white;
     background-color: #100e17;
-    z-index: 0;
+    /* z-index: 0; */
 }
 .link-td {
     background: -webkit-linear-gradient(45deg, #ff8a00,#e52e71);
